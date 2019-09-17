@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= blog.title%></div>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image %>" alt="">
+            <div class="content">
+                <span>
+                    <!-- <%= blog.created.toDateString() %> -->
+                </span>
+            </div>
+            <div class="description">
+                <!--  this syntax tells browser to run it as code instead of displaying. on html Now in your blog post if you include a string tag, it will bold that text. Use express sanitizer package to avoid someone executing script tags in browser  -->
+
+                <p><%- blog.body %></p>
+            </div>
+            <div class="meta">
+                <span><%= blog.created.toDateString() %></span>
+            </div>
+            <a href="/blogs/<%= blog._id%>/edit" class="ui orange inverted button">Edit Post</a>
+            <form id="delete" action="/blogs/<%= blog._id%>?_method=DELETE" method="POST">
+                <button class="ui red inverted button">Delete post</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
