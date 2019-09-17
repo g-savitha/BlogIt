@@ -1,7 +1,7 @@
 # BlogIt
 A Blog Application designed by strictly following RESTful Conventions
 
-##Tech Stack
+## Tech Stack
 * Node.js
 * Express.js
 * Semantic UI
